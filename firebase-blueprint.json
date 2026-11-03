@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Early access subscriber lead captured from the AgentGuard landing page.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The subscriber's email address.",
+          "maxLength": 320
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of lead submission."
+        },
+        "source": {
+          "type": "string",
+          "description": "CTA source location where the form was submitted.",
+          "maxLength": 100
+        },
+        "tier": {
+          "type": "string",
+          "description": "Optional pricing tier reserved by the visitor.",
+          "maxLength": 50
+        }
+      },
+      "required": ["email", "createdAt", "source"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection storing landing page leads and audit reservations."
+    }
+  }
+}

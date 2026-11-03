@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['email', 'createdAt', 'source'])
+        && data.keys().hasOnly(['email', 'createdAt', 'source', 'tier'])
+        && data.email is string
+        && data.email.size() >= 3
+        && data.email.size() <= 320
+        && data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && data.source is string
+        && data.source.size() <= 100
+        && (!('tier' in data) || (data.tier is string && data.tier.size() <= 50))
+        && data.createdAt == request.time;
+    }
+
+    // Leads collection: Public can only CREATE with strict validation.
+    // Nobody can read, update, or delete leads from the client app.
+    match /leads/{leadId} {
+      allow create: if isValidId(leadId) && isValidLead(request.resource.data);
+      allow read, update, delete: if false;
+    }
+  }
+}

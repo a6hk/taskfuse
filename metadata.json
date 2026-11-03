@@ -1,0 +1,6 @@
+{
+  "name": "AgentGuard",
+  "description": "Know what every finished agent task actually costs. Per-task cost tracking and budget caps for teams spending $5K–$50K a month on AI agents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
