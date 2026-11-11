@@ -107,28 +107,6 @@ npm run build
 
 ---
 
-## 📢 Distribution & Share Kit
-
-Ready-to-post copy for validating the value proposition:
-
-### 1. Reddit — `r/AI_Agents`
-**Title:** Token dashboards tell you what you spent. Not what one finished task cost.  
-**Body:**  
-> I've been researching agent cost blowups for a few months — the 200-calls-in-four-minutes retry loops, the $19K surprise bills, the run that costs $200 one night and $7 the next. The pattern I keep seeing: every tool reports tokens per request, but nobody can say what one completed task cost — one closed ticket, one enriched lead — with retries and failures rolled in. IDC found 67% of enterprises overran their agent budget by 10%+ last year, and AWS just wrote cost-per-task into the Agentic AI Lens as a target KPI. I put together a page for a per-task cost tracker with hard dollar caps per task, and I'd genuinely like this sub to poke holes in it before I build further. Is cost-per-completed-task the number you'd actually use, or is your current setup enough? [YOUR LINK]
-
-### 2. X / Twitter
-> Agents burn 5–30x more tokens per task than a chatbot (Gartner). Uber blew its entire 2026 AI budget by April. 67% of teams overran agent budgets last year (IDC). Everyone measures tokens per request. Nobody measures cost per finished task — which is the only number a margin cares about. I put together a page for a tool that tracks exactly that and hard-caps any task at a dollar limit. Would honestly value takes from anyone running agents in production: [YOUR LINK]
-
-### 3. Reddit — `r/AIToolsPerformance`
-**Title:** You already track cost per successful task by hand. Should that be automatic?  
-**Body:**  
-> This sub is one of the only places I've seen people track first-try success rate, retries needed, and total cost per successful task — which is exactly the metric the rest of the agent world ignores. I've been talking to teams running production agents, and the gap between "what the provider bill says" and "what a clean completed task costs" is routinely 3–6x once retry loops are counted. I put together a page for a proxy that attributes every call to a task ID and reports cost per completed task automatically, with optional per-task dollar caps. Since you all live in this data manually, I'd rather hear what's wrong with the approach now than after building: [YOUR LINK]
-
-### 4. Direct Message (DM)
-> Saw your post about agent costs getting unpredictable — I've been researching that exact problem and put together a page for a tool that tracks cost per completed task (retries included) and hard-caps any task at a dollar limit. Would you take 60 seconds and tell me if this would actually help, or what's missing? [YOUR LINK]
-
----
-
 ## 📄 License
 
 Apache-2.0
